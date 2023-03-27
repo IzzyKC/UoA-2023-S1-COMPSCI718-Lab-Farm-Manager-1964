@@ -1,9 +1,6 @@
 package ictgradschool.industry.farmmanager;
 
-import ictgradschool.industry.farmmanager.animals.Animal;
-import ictgradschool.industry.farmmanager.animals.Chicken;
-import ictgradschool.industry.farmmanager.animals.Cow;
-import ictgradschool.industry.farmmanager.animals.Dog;
+import ictgradschool.industry.farmmanager.animals.*;
 
 import java.util.Arrays;
 
@@ -199,6 +196,16 @@ public class Farm {
         // TODO Task Seven. Go through the animals array, and harvest the product from each animal on the farm
         // TODO if the animal is an instance of IProductionAnimal and it is harvestable. When you have harvested an
         // TODO animal, don't forget to increase the money you have on the farm with the money you made.
+        for(int i = 0; i <animals.length; i++){
+            if(animals[i] != null){
+                if(animals[i] instanceof IProductionAnimal){
+                    IProductionAnimal pAnimal = (IProductionAnimal) animals[i];
+                    if(pAnimal.harvestable())
+                        money += pAnimal.harvest();
+
+                }
+            }
+        }
 
     }
 }

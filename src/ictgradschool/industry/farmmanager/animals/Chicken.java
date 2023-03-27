@@ -1,6 +1,6 @@
 package ictgradschool.industry.farmmanager.animals;
 
-public class Chicken extends Animal{
+public class Chicken extends Animal implements IProductionAnimal{
     private final int MAX_VALUE = 300;
 
     public Chicken(){
@@ -46,4 +46,19 @@ public class Chicken extends Animal{
     }
 
 
+    @Override
+    /**
+     * You can always collect eggs from a chicken regardless of its value.
+     */
+    public boolean harvestable() {
+        return true;
+    }
+
+    @Override
+    /**
+     * The money you can make from collecting eggs is $5.
+     */
+    public int harvest() {
+        return 5;
+    }
 }

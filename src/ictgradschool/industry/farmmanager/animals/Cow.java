@@ -7,7 +7,7 @@ package ictgradschool.industry.farmmanager.animals;
  *
  * @author write your name and UPI here.
  */
-public class Cow extends Animal {
+public class Cow extends Animal implements IProductionAnimal  {
     private final int MAX_VALUE = 1500;
 
     public Cow() {
@@ -30,5 +30,26 @@ public class Cow extends Animal {
 
     public String toString() {
         return getType() + " - $" + value;
+    }
+
+    @Override
+    public boolean harvestable() {
+        /**
+         *  A cow can only be milked if its value has reached the maximum.
+         *  The money you can make from milking a harvestable cow is $20, otherwise $0.
+         */
+        if(value == MAX_VALUE)
+            return true;
+        return false;
+    }
+
+    @Override
+    /**
+     * The money you can make from milking a harvestable cow is $20, otherwise $0.
+     */
+    public int harvest() {
+        if(value == MAX_VALUE)
+            return 20;
+        return 0;
     }
 }
