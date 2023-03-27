@@ -75,7 +75,7 @@ public class Farm {
         // TODO to the animals array if the animals array is not already full.
         // TODO Also, deduct the animal price from money once the new animal has been
         // TODO added to the animals array.
-        for (int i =0; i <animals.length; i++) {
+        for (int i = 0; i < animals.length; i++) {
             if (animals[i] == null) {
                 money -= price;
                 animals[i] = newAnimal;
@@ -157,11 +157,11 @@ public class Farm {
         // TODO if you have enough money to feed it. When you fed an animal, don't forget to subtract
         // TODO the cost to feed from the money you have on the farm, and call the feed method on the
         // TODO animal.
-        for (int i=0; i<animals.length;i++) {
-            if(animals[i] != null){
+        for (int i = 0; i < animals.length; i++) {
+            if (animals[i] != null) {
                 animals[i] = getAnimal(animals[i].getType());
-                if(animals[i] != null){
-                    if(money > animals[i].costToFeed()) {
+                if (animals[i] != null) {
+                    if (money > animals[i].costToFeed()) {
                         animals[i].feed();
                         money -= animals[i].costToFeed();
                     }
@@ -178,13 +178,13 @@ public class Farm {
         // TODO Task Five. Go through the animals array, and print information for each animal on the farm.
         // TODO If there are no animals on the farm, simply print "No animals on the farm!"
         int animalIndex = -1;
-        for(int i =0 ; i < animals.length; i++){
-            if(animals[i] != null){
+        for (int i = 0; i < animals.length; i++) {
+            if (animals[i] != null) {
                 System.out.println(animals[i].toString());
                 animalIndex++;
             }
         }
-        if(animalIndex == -1)
+        if (animalIndex == -1)
             System.out.println("No animals on the farm!");
 
     }
@@ -196,11 +196,11 @@ public class Farm {
         // TODO Task Seven. Go through the animals array, and harvest the product from each animal on the farm
         // TODO if the animal is an instance of IProductionAnimal and it is harvestable. When you have harvested an
         // TODO animal, don't forget to increase the money you have on the farm with the money you made.
-        for(int i = 0; i <animals.length; i++){
-            if(animals[i] != null){
-                if(animals[i] instanceof IProductionAnimal){
+        for (int i = 0; i < animals.length; i++) {
+            if (animals[i] != null) {
+                if (animals[i] instanceof IProductionAnimal) {
                     IProductionAnimal pAnimal = (IProductionAnimal) animals[i];
-                    if(pAnimal.harvestable())
+                    if (pAnimal.harvestable())
                         money += pAnimal.harvest();
 
                 }

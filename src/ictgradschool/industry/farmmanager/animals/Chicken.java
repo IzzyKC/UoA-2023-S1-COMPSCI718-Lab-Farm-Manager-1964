@@ -1,11 +1,12 @@
 package ictgradschool.industry.farmmanager.animals;
 
-public class Chicken extends Animal implements IProductionAnimal{
+public class Chicken extends Animal implements IProductionAnimal {
     private final int MAX_VALUE = 300;
 
-    public Chicken(){
+    public Chicken() {
         value = 200;
     }
+
     @Override
     /**
      * Implement the feed method so that the value for the chicken increases when the chicken has been fed.
@@ -14,7 +15,7 @@ public class Chicken extends Animal implements IProductionAnimal{
      * Note that the value of the chicken should not exceed the MAX_VALUE.
      */
     public void feed() {
-        if(value < MAX_VALUE){
+        if (value < MAX_VALUE) {
             value += (MAX_VALUE - value) / 2;
         }
 
@@ -39,6 +40,7 @@ public class Chicken extends Animal implements IProductionAnimal{
     /**
      * Implement the toString method so that the user knows what it is.
      * The String should be similar to the one in the Cow class.
+     *
      * @return String
      */
     public String toString() {

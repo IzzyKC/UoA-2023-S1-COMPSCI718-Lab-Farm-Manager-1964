@@ -1,11 +1,12 @@
 package ictgradschool.industry.farmmanager.animals;
 
-public class Dog extends Animal{
+public class Dog extends Animal {
 
     private final int MAX_VALUE = 600;
+
     @Override
     public void feed() {
-        if(value < MAX_VALUE){
+        if (value < MAX_VALUE) {
             value += 50;
         }
     }
