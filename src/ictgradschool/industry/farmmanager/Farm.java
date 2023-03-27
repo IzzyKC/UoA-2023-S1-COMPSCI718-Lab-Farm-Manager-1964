@@ -1,7 +1,9 @@
 package ictgradschool.industry.farmmanager;
 
 import ictgradschool.industry.farmmanager.animals.Animal;
+import ictgradschool.industry.farmmanager.animals.Chicken;
 import ictgradschool.industry.farmmanager.animals.Cow;
+import ictgradschool.industry.farmmanager.animals.Dog;
 
 import java.util.Arrays;
 
@@ -97,6 +99,10 @@ public class Farm {
         switch (animalType.toLowerCase()) {
             case "cow":
                 return new Cow();
+            case "chicken":
+                return new Chicken();
+            case "dog":
+                return new Dog();
             default:
                 // Animal type does not exist;
                 return null;
