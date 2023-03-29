@@ -48,7 +48,7 @@ public class Cow extends Animal implements IProductionAnimal {
      * The money you can make from milking a harvestable cow is $20, otherwise $0.
      */
     public int harvest() {
-        if (value == MAX_VALUE)
+        if (harvestable())
             return 20;
         return 0;
     }
