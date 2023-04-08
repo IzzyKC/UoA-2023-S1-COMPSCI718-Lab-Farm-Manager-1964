@@ -38,7 +38,7 @@ public class Cow extends Animal implements IProductionAnimal {
          *  A cow can only be milked if its value has reached the maximum.
          *  The money you can make from milking a harvestable cow is $20, otherwise $0.
          */
-        return (value == MAX_VALUE);
+        return (value >= MAX_VALUE);
     }
 
     @Override

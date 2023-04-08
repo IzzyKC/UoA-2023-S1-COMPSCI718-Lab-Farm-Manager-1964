@@ -16,14 +16,12 @@ public abstract class Animal {
 
     /**
      * Returns the cost to feed the animal.
-     *
      * @return cost to feed the animal.
      */
     public abstract int costToFeed();
 
     /**
      * Returns the type of the animal.
-     *
      * @return type of animal.
      */
     public abstract String getType();
